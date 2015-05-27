@@ -36,10 +36,9 @@ AbstractSchemaGenerator.prototype._convertType = function (type) {
    if (type === Boolean) return 'Boolean';
    if (type === mongoose.Schema.Types.ObjectId) return 'ObjectId';
    if (type === mongoose.Schema.Types.Oid) return 'Oid';
-   if (type === Object) return "Embedded";
+   if (type === mongoose.Schema.Types.Mixed) return "Mixed";
    if (type instanceof Object && type.type) return this._swaggerTypeFor(type.type);
    if (type instanceof Object) return "Embedded";
-   if (type === mongoose.Schema.Types.Mixed) return "Embedded";
    if (type === mongoose.Schema.Types.Buffer) return null;
    if (type === undefined) return null;
    throw new Error('Unrecognized type: ' + type);

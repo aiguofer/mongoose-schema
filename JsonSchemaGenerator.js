@@ -144,6 +144,10 @@ JsonSchemaGenerator.prototype._generateTypeString = function (path) {
    return {type: "string"};
 }
 
+JsonSchemaGenerator.prototype._generateTypeMixed = function (path) {
+   return {type: "object"};
+}
+
 JsonSchemaGenerator.prototype._generateTypeEmbedded = function (path) {
    var schema = this.generate(path.schema);
    schema.type = "object";
